@@ -1,0 +1,106 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(to right top, #433ba0, #4ec2c9);
+  /* 
+  another option:
+  background: linear-gradient(45deg,  #433ba0, #4ec2c9)
+  */
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 
+    https://css-tricks.com/a-complete-guide-to-css-gradients/#h-linear-gradients
+    https://css-tricks.com/almanac/properties/r/rotate/
+*/
+
+.number-one,
+.line {
+  background: #ffffff;
+}
+
+span {
+  display: inline-block;
+}
+
+.number-hundred {
+  display: flex;
+  align-items: baseline;
+}
+
+.number-one {
+  position: relative;
+  width: 24px;
+  height: 110px;
+  border-radius: 4px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+  right: -20px;
+}
+
+.number-one .line {
+  position: absolute;
+  width: 22px;
+  height: 43px;
+  border-radius: 4px;
+  rotate: 50deg;
+  left: -17px;
+  z-index: -30;
+}
+
+.number-zero {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 24px white;
+}
+
+/* 
+  nth-child select the element based on the its index within the parent,
+  diferente from its sibling nth-of-type, which select elements based on 
+  both its the position and type (tag name).
+*/
+
+.number-zero:nth-child(2) {
+  z-index: -1;
+  right: -10px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+}
+
+.number-zero:nth-child(3) {
+  z-index: -2;
+  right: 10px;
+}
+
+.text {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 24px;
+  margin-top: 20px;
+}
+
+.big-text {
+  font-size: 70px;
+}
