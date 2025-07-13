@@ -1,0 +1,137 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #3faf82;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.line-2 {
+  margin: 14px 0;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+}
+
+.line-1,
+.line-2,
+.line-3 {
+  width: 80px;
+  height: 7px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+/* 
+  Types of animation timing functions:
+  They control the animation's acceleration and deceleration, creating smooth transitions
+  1- linear: constant speed
+  2- ease: (default) starts slowly, then accelerates and decelerates
+  3- ease-in: starts slowly
+  4- ease-out: ends slowly
+  5- ease-in-out: slowl at the beginning and the end
+  6- stpes: animation progresses in steps
+*/
+
+.hamburger-menu .line-1 {
+  animation: 0.8s line-1-animation-rev ease-in-out;
+}
+
+.hamburger-menu .line-3 {
+  animation: 0.8s line-3-animation-rev ease-in-out;
+}
+
+.hamburger-menu .line-2 {
+  animation: 0.8s line-2-animation-rev ease-in-out;
+}
+
+.hamburger-menu.active .line-1 {
+  animation: 0.5s line-1-animation forwards;
+}
+.hamburger-menu.active .line-2 {
+  animation: 0.5s line-2-animation forwards;
+}
+.hamburger-menu.active .line-3 {
+  animation: 0.5s line-3-animation forwards;
+}
+
+@keyframes line-1-animation {
+  50% {
+    transform: translateY(21px);
+  }
+  100% {
+    transform: translateY(21px) rotate(45deg);
+  }
+}
+
+@keyframes line-3-animation {
+  50% {
+    transform: translateY(-21px);
+  }
+  100% {
+    transform: translateY(-21px) rotate(135deg);
+  }
+}
+
+@keyframes line-2-animation {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* 
+  when you remove translateY(0) from line-1-animation-rev and line-3-animation-rev
+  there is no difference because the browser understands that element should return
+  to its original state. The same thing applies to line-2-animation-rev
+*/
+
+@keyframes line-1-animation-rev {
+  0% {
+    transform: translateY(21px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(21px) rotate(0);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes line-3-animation-rev {
+  0% {
+    transform: translateY(-21px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-21px) rotate(0);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes line-2-animation-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
